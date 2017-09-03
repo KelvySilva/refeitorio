@@ -34,23 +34,23 @@ public class FuncionarioController {
 		return "index";
 	}
 	
-	
+	/*
 	public boolean login(String username, String password){
 		Login login = loginrepository.findByUsername(username);
 		String pass = CryptUtil.decryptPass(login.getPassword());
 		return (username.equals(login.getUsername())) && (password.equals(pass));
 	}
-	
+*/	
 	@RequestMapping("login")
 	public String mostratela(){
 		return "login";
 	}
 	
-	@RequestMapping(value = "entrar", method = RequestMethod.GET)
+	/*@RequestMapping(value = "entrar", method = RequestMethod.GET)
 	public String entrar(@RequestParam("username") String username, @RequestParam("password") String password){
 		if (this.login(username, password)) return "index";
 		else return "login-error";
-	}
+	}*/
 
 	@RequestMapping("voltar")
 	public String voltar() {
