@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lista de Funcionarios</title>
+<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<div id="listaDeFuncinarios">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Codigo</th>
+						<th>Nome</th>
+						<th>Data</th>
+					</tr>
+				</thead>
+				<tr th:each="funcionario : ${funcionarios}">
+					<td><span th:text="${funcionario.codflex}"></span></td>
+					<td><span th:text="${funcionario.nameflex}"></span></td>
+					<td><span th:text="${funcionario.data}"></span></td>
+				</tr>
+			</table>
+		</div>
+		
+	</div>
+	<hr/>
+	<form action="salvar" method="post">
+		<!-- <div class="form-group">
+			<label for="id">Id</label>
+			<input type="text" class="form-control" id="id" name="id" placeholder="Id" />
+		</div> -->
+		<div class="form-group">
+			<label for="codflex">Codigo</label>
+			<input type="text" class="form-control" id="codflex" name="codflex" placeholder="Codigo" />
+		</div>
+		<!-- <div class="form-group">
+			<label for="nameflex">Nome</label>
+			<input type="text" class="form-control" id="nameflex" name="nameflex" placeholder="Nome" />
+		</div> -->
+		<!-- <div class="form-group">
+			<label for="data">Data</label>
+			<input type="date" class="form-control" id="data" name="data" placeholder="Data" />
+		</div> -->
+		<button type="submit" class="btn btn-info">salvar</button>
+	</form>
+	<form action="voltar" method="post">
+		<div>
+			<div align="center">
+			<button type="submit" class="btn btn-default">voltar</button>
+			</div>
+		</div>
+	</form>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

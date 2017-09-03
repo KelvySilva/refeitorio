@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Cadastro de Funcionarios</title>
+<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<hr/>
+	<form action="cadastro" method="post">
+		<div class="form-group">
+			<label for="codflex">Codigo</label>
+			<input type="text" class="form-control" id="codflex" name="codflex" placeholder="Codigo" />
+		</div>
+		<div class="form-group">
+			<label for="nameflex">Nome</label>
+			<input type="text" class="form-control" id="nameflex" name="nameflex" placeholder="Nome" />
+		</div>
+		<div class="form-group">
+			<label for="data">Data</label>
+			<input type="date" class="form-control" id="data" name="data" placeholder="Data" />
+		</div>
+		<button type="submit" class="btn btn-sucess">Gravar</button>
+	</form>
+	<form action="voltar" method="post">
+		<div>
+			<div align="center">
+			<button type="submit" class="btn btn-default">voltar</button>
+			</div>
+		</div>
+	</form>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
