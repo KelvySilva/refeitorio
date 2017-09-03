@@ -39,8 +39,8 @@ public class FuncionarioController {
 		Login login = loginrepository.findByUsername(username);
 		String pass = CryptUtil.decryptPass(login.getPassword());
 		return (username.equals(login.getUsername())) && (password.equals(pass));
-	}
-*/	
+	}*/
+	
 	@RequestMapping("login")
 	public String mostratela(){
 		return "login";
