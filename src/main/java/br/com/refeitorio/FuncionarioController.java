@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.refeitorio.model.Funcionario;
-import br.com.refeitorio.model.FuncionarioFlex;
+import br.com.refeitorio.model.FuncionarioErp;
 import br.com.refeitorio.model.Login;
-import br.com.refeitorio.repository.FuncionarioFlexRepository;
+import br.com.refeitorio.repository.FuncionarioErpRepository;
 import br.com.refeitorio.repository.FuncionarioRepository;
 import br.com.refeitorio.repository.LoginRepository;
 import br.com.refeitorio.util.CryptUtil;
@@ -25,7 +25,7 @@ public class FuncionarioController {
 	@Autowired
 	private FuncionarioRepository repository;
 	@Autowired
-	private FuncionarioFlexRepository flexrepository;
+	private FuncionarioErpRepository erprepository;
 	@Autowired
 	private LoginRepository loginrepository;
 
@@ -88,22 +88,22 @@ public class FuncionarioController {
 	}
 	
 	@RequestMapping(value = "cadastro", method = RequestMethod.POST)
-	public String gravar(BigDecimal id, @RequestParam("codflex") String codflex,
-			@RequestParam("nameflex") String nameflex, @RequestParam("data") Date data, Model model) {
+	public String gravar(BigDecimal id, @RequestParam("coderp") String coderp,
+			@RequestParam("nameerp") String nameerp, @RequestParam("data") Date data, Model model) {
 
-		FuncionarioFlex funcionarioFlex = new FuncionarioFlex(id, codflex, nameflex, data);
-		flexrepository.save(funcionarioFlex);
+		FuncionarioErp funcionarioErp = new FuncionarioErp(id, coderp, nameerp, data);
+		erprepository.save(funcionarioErp);
 		return "cadastro";
 	}
 
 	@RequestMapping(value = "salvar", method = RequestMethod.POST)
-	public String salvar(BigDecimal id, @RequestParam("codflex") String codflex, String nameflex, Date data,
+	public String salvar(BigDecimal id, @RequestParam("coderp") String coderp, String nameerp, Date data,
 			Model model) {
 
 		LocalDate localDate = LocalDate.now();
 		Date date = Date.valueOf(localDate);
-		FuncionarioFlex f = flexrepository.findByCodflex(codflex);
-		Funcionario funcionario = new Funcionario(id, f.getCodflex(), f.getNameflex(), date);
+		FuncionarioErp f = erprepository.findByCoderp(coderp);
+		Funcionario funcionario = new Funcionario(id, f.getCoderp(), f.getNameerp(), date);
 		repository.save(funcionario);
 		Iterable<Funcionario> funcionarios = repository.findByData(date);
 		model.addAttribute("funcionarios", funcionarios);

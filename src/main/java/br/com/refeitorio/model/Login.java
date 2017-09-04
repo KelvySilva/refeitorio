@@ -17,7 +17,7 @@ public class Login extends User {
 	private static final long serialVersionUID = 1L;
 	
 
-	@NotNull(message = ValidationMessages.MESSAGE_USERFLEX_NOT_NULL)
+	@NotNull(message = ValidationMessages.MESSAGE_USERERP_NOT_NULL)
 	private String username;	
 	@NotNull(message = ValidationMessages.MESSAGE_NOME_NOT_NULL)
 	private String name;
@@ -62,12 +62,12 @@ public class Login extends User {
 	}
 	
 	
-	public String getNameflex() {
+	public String getNameerp() {
 		return username;
 	}
 	
-	public void setNameflex(String nameflex) {
-		this.username = nameflex;
+	public void setNameerp(String nameerp) {
+		this.username = nameerp;
 	}
 	
 }

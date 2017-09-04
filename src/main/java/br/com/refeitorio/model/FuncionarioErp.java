@@ -15,9 +15,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 import br.com.refeitorio.validation.ValidationMessages;
 
 @Entity
-@Table(name = "funcionario")
+@Table(name = "funcionarioerp")
 @AttributeOverride(name = "createDate", column = @Column(name = "std_entry_date"))
-public class Funcionario extends User {
+public class FuncionarioErp extends User {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -31,14 +31,14 @@ public class Funcionario extends User {
 	private Date data;
 
 
-	public Funcionario(BigDecimal id, String coderp, String nameerp, Date data) {
+	public FuncionarioErp(BigDecimal id, String coderp, String nameerp, Date data) {
 		super(id);
 		this.coderp = coderp;
 		this.nameerp = nameerp;
 		this.data = data;
 	}
 	
-	public Funcionario() {
+	public FuncionarioErp() {
 	
 	}
 
